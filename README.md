@@ -4,81 +4,49 @@
 
 This project demonstrates the deployment of a React-based e-commerce application using modern DevOps and cloud technologies.
 
-The application is deployed as a containerized Nginx application on an Amazon EKS cluster and exposed to the internet using a Kubernetes LoadBalancer Service.
+The application is provided as a production-ready `dist` directory. It is containerized using Docker and Nginx and deployed to an Amazon EKS Kubernetes cluster.
 
-The project demonstrates:
+The application is exposed to the internet through a Kubernetes LoadBalancer Service.
 
-- Application deployment
-- Docker containerization
-- AWS infrastructure provisioning using Terraform
-- Amazon EKS
-- Kubernetes Deployment and Service
-- Amazon ECR
-- Jenkins CI/CD
-- GitHub Webhook integration
-- Nginx SPA routing
-- Kubernetes LoadBalancer
+## 🎯 Project Objectives
 
----
+- Deploy the provided React e-commerce application.
+- Containerize the application using Docker.
+- Serve the application using Nginx.
+- Configure SPA routing for browser refresh.
+- Provision supporting AWS infrastructure using Terraform.
+- Configure Jenkins for CI/CD automation.
+- Build and push the Docker image to Amazon ECR.
+- Deploy the application to Amazon EKS using Kubernetes.
+- Expose the application using a Kubernetes LoadBalancer.
+- Configure GitHub Webhook integration with Jenkins.
+- Maintain the project using Git and GitHub.
 
-# 🏗️ Architecture
-
-The deployment flow is:
-
-GitHub
-   ↓
-Jenkins
-   ↓
-Docker Build
-   ↓
-Amazon ECR
-   ↓
-Amazon EKS
-   ↓
-Kubernetes Deployment
-   ↓
-Kubernetes Pod
-   ↓
-Kubernetes LoadBalancer
-   ↓
-Trendify Application
-
----
-
-# 🛠️ Technologies Used
-
-- React
-- HTML
-- CSS
-- JavaScript
-- Nginx
-- Docker
-- Terraform
-- AWS
-- Amazon ECR
-- Amazon EKS
-- Kubernetes
-- Jenkins
-- Git
-- GitHub
-
----
-
-# 📁 Project Structure
+## 🏗️ Architecture
 
 ```text
-trend-project/
-│
-├── dist/
-│   └── Production-ready React application files
-│
-├── k8s/
-│   ├── deployment.yaml
-│   └── service.yaml
-│
-├── Dockerfile
-├── nginx.conf
-├── main.tf
-├── .dockerignore
-├── .gitignore
-└── README.md
+GitHub
+   |
+   | GitHub Webhook
+   v
+Jenkins
+   |
+   | Docker Build
+   v
+Amazon ECR
+   |
+   v
+Amazon EKS
+   |
+   v
+Kubernetes Deployment
+   |
+   v
+Kubernetes Service
+   |
+   | LoadBalancer
+   v
+AWS Load Balancer
+   |
+   v
+Trendify Application
